@@ -46,17 +46,13 @@ This project covers:
 - Feasibility studies (technical, legal, operational, economic)  
 - Future scope including AGI, explainable AI, and lifelong learning systems
 
-> 📘 Full report included in the `/docs` folder (optional PDF upload)
-
 ---
 
 ## 🚀 Future Scope
 
 - Deploy NLP-based chatbot for interaction  
 - Add learner dashboards with progress graphs  
-- Integrate AI explainability tools (LIME, SHAP)  
-- Mobile app support (React Native)
-
+- Integrate AI explainability tools 
 ---
 
 ## 🙋‍♀️ Author
