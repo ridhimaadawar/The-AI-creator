@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Scholarly Article Tool</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <style>
+ /* Additional CSS styles can be added here */
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #3a5743;
+ margin: 0;
+ padding: 0;
+ }
+ .container {
+ max-width: 800px;
+ margin: 50px auto;
+ padding: 20px;
+ background-color: #cfffb3;
+ border-radius: 8px;
+ box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ }
+ h1, h2 {
+ color: #333;
+ }
+ label {
+ font-weight: bold;
+ }
+ input[type="text"] {
+ width: 100%;
+ padding: 10px;
+ margin: 5px 0;
+ border: 1px solid #ce8f5c59;
+  border-radius: 5px;
+ box-sizing: border-box;
+ }
+ button[type="submit"] {
+ padding: 10px 20px;
+ background-color: #4690df;
+ color: #ffffff;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ }
+ button[type="submit"]:hover {
+ background-color: #265588;
+ }
+ #result {
+margin-top: 20px;
+ }
+ p {
+ line-height: 1.5;
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <header>
+ <h1>Scholarly Article Tool</h1>
+ </header>
+ <main>
+ <form id="articleForm" method="POST">
+ <label for="topic">Enter Topic:</label>
+ <input type="text" id="topic" name="topic" required>
+ <button type="submit">Get Articles</button>
+ </form>
+ <section id="result">
+ <h2></h2>
+ <p id="introduction">{{ introduction }}</p>
+ <h2>Your articles</h2>
+ <ul id="articles">
+ {% for article in articles %}
+ <li><a href="{{ article.link }}">{{ article.title }}</a></li>
+ <br>
+ {% endfor %}
+ </ul>
+ <h2></h2>
+ <p id="conclusion">{{ conclusion }}</p>
+ </section>
+</main>
+ </div>
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
